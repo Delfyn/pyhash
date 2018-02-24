@@ -5,6 +5,8 @@ import hashlib
 import datetime
 import bcrypt
 
+filename = "CRC.txt"
+
 def get_folder_files():
     return os.listdir()
 
@@ -19,7 +21,7 @@ def bcrypt_string(string):
     return bcrypt.hashpw(string.encode("utf-8"), bcrypt.gensalt())
 
 def main():
-    f = open("CRC.txt", "w", encoding="utf-8")
+    f = open(filename, "w", encoding="utf-8")
     now = datetime.datetime.now()
     print("SHA-256 hash, at {}, files : ".format(now.strftime("%Y-%m-%d %H:%M")))
     f.write("SHA-256 hash, at {}, files : ".format(now.strftime("%Y-%m-%d %H:%M")))
@@ -29,7 +31,7 @@ def main():
     f.write(' '.join(files))
     f.write("\n")
     for i in range(len(files)):
-        if os.path.isdir(files[i]):
+        if os.path.isdir(files[i]) or files[i] == filename:
             # print("{} is folder .. ".format(files[i]))
             continue
         try:
