@@ -20,7 +20,7 @@ def sha256_checksum(filename, block_size=65536):
 def bcrypt_string(string):
     return bcrypt.hashpw(string.encode("utf-8"), bcrypt.gensalt())
 
-def main():
+def calc_checksum():
     f = open(filename, "w", encoding="utf-8")
     now = datetime.datetime.now()
     print("SHA-256 hash, at {}, files : ".format(now.strftime("%Y-%m-%d %H:%M")))
@@ -41,11 +41,11 @@ def main():
         except:
             print("{} error".format(files[i]))
             f.write("{} error \n".format(files[i]))
-    f.write("\n")
+    f.write("---------------------------------------------------------------------\n")
     print("Type password :", end=" " )
     password_hash = bcrypt_string(input())
     f.write(str(password_hash))
     print("\n{}".format(password_hash))
 
 if __name__ == '__main__':
-    main()
+    calc_checksum()
