@@ -49,8 +49,8 @@ def get_file_hashes(filename=tmp.filename):
 def main():
     print("Not changed files : HASH | NAME_IN_CRC_FILE | NAME_IN_FOLDER")
     print()
-    for x in get_folder_hashes().values():
-        for y in get_file_hashes().values():
+    for x in get_file_hashes().values():
+        for y in get_folder_hashes().values():
             if x == y:
                 if list(get_file_hashes().keys())[list(get_file_hashes().values()).index(x)] == list(get_folder_hashes().keys())[list(get_folder_hashes().values()).index(x)]:
                     print("{} == {}".format(x, list(get_file_hashes().keys())[list(get_file_hashes().values()).index(x)]))
