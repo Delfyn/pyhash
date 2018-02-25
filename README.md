@@ -1,4 +1,6 @@
 # pyhash
+Calculates hashes of files in current directory, with output to text file
+
 
 ## Setup
 - Change enviroments, first line
@@ -17,8 +19,13 @@ or use Google
 
 ## Usage
 hash.py
+decrypt.py
 
 ## Unix
 chmod +x hash.py
 
+chmod +x decrypt.py
+
 ./hash.py
+
+./decrypt.py
