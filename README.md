@@ -1,8 +1,10 @@
 # pyhash
 Calculates hashes of files in current directory, with output to text file
+after you can type password, which will be encrypted (bcrypt hash), ie. zip file with password...
 
 
 ## Setup
+- `pip install bcrypt`
 - Change enviroments, first line
 - Add to PATH
 
